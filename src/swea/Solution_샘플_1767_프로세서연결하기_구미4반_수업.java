@@ -72,6 +72,9 @@ public class Solution_샘플_1767_프로세서연결하기_구미4반_수업 {
 	//index: 부분집합에 고려할 코어 인덱스,
 	//cCnt: 가장자리까지 연결된 코어 개수
 	private static void go(int index, int cCnt) {
+		//가지치기, backtracking
+		//연산해서 max못넘으면 패스
+		if(cCnt + (totalCnt - index) < max) return;
 		//기저조건, 종료조건
 		//부분집합 다 따져봤다. 1번째 원소 선택/비선택, 2번째 ...
 		if(index == totalCnt) {
