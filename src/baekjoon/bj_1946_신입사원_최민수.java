@@ -39,6 +39,17 @@ public class bj_1946_신입사원_최민수 {
 				}			
 			});
 			
+//			System.out.println(p[0].paperScore);
+//			System.out.println(p[1].paperScore);
+//			System.out.println(p[2].paperScore);
+//			System.out.println(p[3].paperScore);
+			
+			//다른 모든 지원자와 비교했을 때 서류심사 성적과 면접시험 성적 중
+			//적어도 하나가 다른 지원자보다 떨어지지 않는 자만 선발한다
+			
+			//어떤 지원자 A의 성적이 다른 어떤 지원자 B의 성적에 비해
+			//서류 심사 결과와 면접 성적이 모두 떨어진다면 A는 결코 선발되지 않는다.
+			
 			//최고 순위 기록
 			int convBest = p[0].convScore;
 			
@@ -46,7 +57,10 @@ public class bj_1946_신입사원_최민수 {
 			//서류 점수는 오름차순으로 정렬해놨으니 비교할 필요 없고
 			//면접 점수를 비교하는데, 면접점수는 최고 순위를 갱신하면서 비교한다.
 			for (int j = 1; j < N; j++) {
-				if(p[j].convScore > convBest) answer--;
+//				System.out.println(p[j].convScore);
+				if(p[j].convScore > convBest) { // 1>2
+					answer--;
+				}
 				else convBest = p[j].convScore;
 			}
 
