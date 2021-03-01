@@ -1,4 +1,4 @@
-package baekjoon;
+package baekjoon_01001_02000;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 //[실버 4] 스위치 켜고 끄기
 //https://www.acmicpc.net/problem/1244
 //제출전에 Main으로 바꾸기, file input 지우기, package 지우기
-public class Main_bj_1244_스위치켜고끄기_구미_4_최민수 {
+public class bj_1244_스위치켜고끄기_구미_4_최민수 {
 	//1이면 0으로, 0이면 1로
 	static String change(String num) {
 		if(num.equals("1")) return "0";
