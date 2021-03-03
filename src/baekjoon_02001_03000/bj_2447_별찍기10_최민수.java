@@ -28,10 +28,10 @@ public class bj_2447_별찍기10_최민수 {
 			}
 		}
 		
+		//재귀 함수
 		delete(map, map.length, 0, 0);
 		
-		
-//		for(char[] c : map)System.out.println(Arrays.toString(c));
+		//출력
 		StringBuilder sb = new StringBuilder();
 		for (int i = 0; i < map.length; i++) {
 			for (int j = 0; j < map.length; j++) {
@@ -45,8 +45,10 @@ public class bj_2447_별찍기10_최민수 {
 	}
 
 	private static void delete(char[][] map, int length, int startX, int startY) {
+		//종료 조건
 		if(length == 1) return;
 		
+		//공백 찍기
 		length /= 3;
 		for (int i = startX+length; i < startX+length*2; i++) {
 			for (int j = startY+length; j < startY+length*2; j++) {
