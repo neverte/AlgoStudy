@@ -8,7 +8,7 @@ import java.util.StringTokenizer;
 //[실버 3] 다음 순열
 //https://www.acmicpc.net/problem/10972
 //제출전에 Main으로 바꾸기, file input 지우기, package 지우기
-public class bj_10972_최민수 {
+public class bj_10972_다음순열_최민수 {
 	static int perm[];
 	
 	public static void main(String[] args) throws Exception {
