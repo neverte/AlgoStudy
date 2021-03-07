@@ -1,3 +1,4 @@
+package Etc;
 import java.util.Scanner;
 
 public class Solution_gugudan {
