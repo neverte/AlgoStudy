@@ -1,4 +1,4 @@
-package Acore;
+package _core;
 
 import java.util.Scanner;
 
