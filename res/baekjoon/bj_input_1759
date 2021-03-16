@@ -1,0 +1,62 @@
+3 3
+a b c
+
+java.lang.ArrayIndexOutOfBoundsException:
+
+14 15
+a b c d e f r t y u i o p l k
+
+
+
+3 5
+b s a i o
+
+//자음 두개를 못걸러냄
+
+3 6
+e q w r t y
+
+3 7
+z a e i o u x
+
+axz
+exz
+ixz
+oxz
+uxz
+
+
+3 4
+a b c d
+
+abc
+abd
+acd
+
+3 3
+b c d
+
+아무것도 없음
+
+3 3
+a e i
+
+아무것도 없음
+
+4 6
+a t c i s w
+
+acis
+acit
+aciw
+acst
+acsw
+actw
+aist
+aisw
+aitw
+astw
+cist
+cisw
+citw
+istw

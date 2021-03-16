@@ -36,6 +36,7 @@ public class C1_CombinationBasicTest {
 		}
 		
 		for (int i = start; i < N; i++) {
+			//[i]를 써야지 [start]쓰면 틀린다
 			numbers[cnt] = input[i];
 			combination(cnt+1, i+1);
 			
