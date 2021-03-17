@@ -64,12 +64,12 @@ public class Solution_d4_1238_Contact_구미4반_최민수2 {
 //					System.out.println("in if");
 					visited[i] = visited[current]+1;
 					q.offer(i);
-					if(largestVisit == visited[i]) {
+					if(largestVisit == visited[i]) { //단계가 같으면
 						largestVisit = visited[i];
-						largestNum = Math.max(largestNum, i);
-					}else if(largestVisit < visited[i]) {
+						largestNum = Math.max(largestNum, i); //번호가 가장 큰사람
+					}else if(largestVisit < visited[i]) { //이번에 방문한게 단계가 가장 크니까
 						largestVisit = visited[i];
-						largestNum = i;
+						largestNum = i; //비교 없이 바로 얘가 마지막 사람.
 						
 					}
 				}
