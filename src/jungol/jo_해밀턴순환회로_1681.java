@@ -35,7 +35,6 @@ public class jo_해밀턴순환회로_1681 {
 		System.out.println(answer);
 		
 		br.close();
-
 	}
 
 	static int answer = Integer.MAX_VALUE;
@@ -50,7 +49,6 @@ public class jo_해밀턴순환회로_1681 {
 			if(adjArr[now][0] == 0) return; //회사로 이어지는 길이 없을 수도 있다.
 			//0번은 회사니까 마지막에 방문
 			int temp = totalCost+adjArr[now][0];
-//			System.out.println(temp);
 			answer = Math.min(answer, temp);
 			return;
 		}
