@@ -45,6 +45,7 @@ public class MST_Prim {
 			result += min;
 			visited[minVertex] = true;
 			
+			//기존 최소 간선 비용을 minVertex가 추가되었기 때문에 더 짧은게 있으면 갱신해야 한다.
 			for (int i = 0; i < N; i++) {
 				if(!visited[i] && adjMatrix[minVertex][i] != 0 && minEdge[i] > adjMatrix[minVertex][i]) {
 					//minVertex에서 i로 오는게 더 유리한 경우
