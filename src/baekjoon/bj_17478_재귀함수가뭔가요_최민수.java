@@ -6,7 +6,7 @@ import java.util.Scanner;
 //[실버 5] 재귀함수가 뭔가요?
 //https://www.acmicpc.net/problem/17478
 //제출전에 Main으로 바꾸기, file input 지우기, package 지우기
-public class Main_bj_17478_재귀함수가뭔가요_구미_4_최민수 {
+public class bj_17478_재귀함수가뭔가요_최민수 {
 	//강사님: 스트링 배열에 출력 문장을 집어넣으면 코드가 깔끔함.
 	
 	public static int num = 0;
