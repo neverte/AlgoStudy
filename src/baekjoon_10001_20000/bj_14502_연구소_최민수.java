@@ -28,82 +28,81 @@ public class bj_14502_연구소_최민수 {
 		int n = Integer.parseInt(st.nextToken());
 		int m = Integer.parseInt(st.nextToken());
 		int[][] map = new int[n][m];
-		int[][] mapClone = new int[n][m];
-		blankSpace = -3; //0의 갯수, 벽 3개만큼 미리 빼 둠.
 		ArrayDeque<virus> q = new ArrayDeque<virus>();
 		
 		for (int i = 0; i < n; i++) {
 			st = new StringTokenizer(br.readLine(), " ");
 			for (int j = 0; j < m; j++) {
 				map[i][j] = Integer.parseInt(st.nextToken());
-				mapClone[i][j] = map[i][j];
-				if(map[i][j] == 0) blankSpace++;
-				else if(map[i][j] == 2) q.offer(new virus(i, j));
+				if(map[i][j] == 2) q.offer(new virus(i, j));
 			}
 		}
-		
-		blankSpaceClone = blankSpace;
-		
-		//벽을 설치하고
-		buildWall(mapClone, 0, q, 0, 0);
 
-		System.out.println(answer);
+		//벽을 설치하고
+		int[][] mapClone = new int[n][m];
+		buildWall(map, 0, q, 0, 0);
+
+		if(answer == Integer.MIN_VALUE) System.out.println(0);
+		else System.out.println(answer);
 		
 		br.close();
 	}
-	
-	static int blankSpaceClone;
-	static int answer = Integer.MIN_VALUE;
-	
-	private static void buildWall(int[][] mapClone, int cnt, ArrayDeque<virus> q, int startx, int starty) {
-		int n = mapClone.length;
-		int m = mapClone[0].length;
-		
-		if(cnt == 3) {
-			for(int[] ii : mapClone)System.out.println(Arrays.toString(ii));
-			
-			blankSpace = blankSpaceClone;
-			
-			//세균 번식 시작
-			boolean visited[][] = new boolean[n][m];
-			ArrayDeque<virus> qClone = q.clone();
-			while(!qClone.isEmpty()) {
-				dfs(mapClone, visited, qClone.poll());
-			}
-			
-			System.out.println(blankSpace);
-//			for(boolean[] ii : visited)System.out.println(Arrays.toString(ii));
-			System.out.println();
-			
-			answer = Math.max(answer, blankSpace);
-			return;
-		}
-		
-		for (int i = 0; i < n; i++) {
-			if(i < startx) continue;
-			for (int j = 0; j < m; j++) {
-				if(i <= startx && j < starty) continue;
-				if(mapClone[i][j] == 0) {
-					mapClone[i][j] = 1;
-					if(starty+1 < m) buildWall(mapClone, cnt+1, q, startx, starty+1);
-					else buildWall(mapClone, cnt+1, q, startx+1, 0);
-					mapClone[i][j] = 0;
-				}
-			}
-		}
-		
-		
-		
-	}
 
-	static int blankSpace;
+	static int answer = Integer.MIN_VALUE;
 	//상우하좌
 	static int[] dx = {-1, 0, 1, 0};
 	static int[] dy = {0, 1, 0, -1};
 	
+	private static void buildWall(int[][] map, int cnt, ArrayDeque<virus> q, int startx, int starty) {
+		int n = map.length;
+		int m = map[0].length;
+
+		if(cnt == 3) {//벽을 다 놨다.
+			//세균 번식 시작
+			boolean visited[][] = new boolean[n][m];
+			ArrayDeque<virus> qClone = q.clone();
+			int[][] mapClone = new int[n][m];
+			for (int i = 0; i < n; i++) {
+				for (int j = 0; j < m; j++) {
+					mapClone[i][j] = map[i][j];
+				}
+			}
+			while(!qClone.isEmpty()) {
+				dfs(mapClone, visited, qClone.poll());
+			}
+			
+			countBlank(mapClone);
+
+			return;
+		}
+		
+		//벽놓기
+		for (int i = 0; i < n; i++) {
+			if(i < startx) continue;
+			for (int j = 0; j < m; j++) {
+				if(i <= startx && j < starty) continue;
+				if(map[i][j] == 0) {
+					map[i][j] = 1;
+					if(starty+1 < m) buildWall(map, cnt+1, q, startx, starty+1);
+					else buildWall(map, cnt+1, q, startx+1, 0);
+					map[i][j] = 0;
+				}
+			}
+		}
+
+	}
+
+	private static void countBlank(int[][] map) {
+		int temp = 0;
+		for (int i = 0; i < map.length; i++) {
+			for (int j = 0; j < map[0].length; j++) {
+				if(map[i][j] == 0)temp++;
+			}
+		}
+		answer = Math.max(answer, temp);
+	}
+
 	private static void dfs(int[][] map, boolean[][] v, virus start) {
-		if(blankSpace < answer) return;
-		if(blankSpace < 0) return;
 		
 		for (int i = 0; i < 4; i++) {
 			int cx = start.x + dx[i];
@@ -117,10 +116,8 @@ public class bj_14502_연구소_최민수 {
 			if(map[cx][cy] != 0) continue;
 			
 			v[cx][cy] = true;
-//			map[cx][cy] = 2;
-			blankSpace--; //0이 제거되었으니
+			map[cx][cy] = 2;
 			dfs(map, v, new virus(cx, cy));
-			v[cx][cy] = false;
 		}
 		
 	}
