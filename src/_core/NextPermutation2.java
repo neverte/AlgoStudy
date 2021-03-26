@@ -2,7 +2,7 @@ package _core;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class C2_NextPermutationTest2 {
+public class NextPermutation2 {
 	
 	static int N, R;
 	static int[] input;

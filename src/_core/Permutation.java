@@ -2,7 +2,7 @@ package _core;
 
 import java.util.Arrays;
 
-public class PermutationTest {
+public class Permutation {
 	
 	static int[] numbers;
 	static int N = 3;

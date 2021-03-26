@@ -3,7 +3,7 @@ package _core;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class C2_NextPermutationTest {
+public class NextPermutation1 {
 	
 	static int N, R;
 	static int[] input;

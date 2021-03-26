@@ -3,7 +3,7 @@ package _core;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class C1_CombinationBasicTest {
+public class CombinationBasic {
 	
 	static int N, R;
 	static int[] input;
