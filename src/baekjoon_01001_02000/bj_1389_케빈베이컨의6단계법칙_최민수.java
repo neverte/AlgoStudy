@@ -75,7 +75,7 @@ public class bj_1389_케빈베이컨의6단계법칙_최민수 {
 					q.offer(far+1);
 				}
 			}
-			
+			//test
 		}
 		
 	}
