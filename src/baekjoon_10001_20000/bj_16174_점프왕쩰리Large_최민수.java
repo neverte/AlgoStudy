@@ -34,7 +34,7 @@ public class bj_16174_점프왕쩰리Large_최민수 {
 		q.offer(n-1);
 		q.offer(n-1);
 		boolean can = false;
-		
+		//방문 처리 안했음. 더 줄이고 싶으면 해보자@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 		while(!q.isEmpty()) {
 			int nowx = q.poll();
 			int nowy = q.poll();
