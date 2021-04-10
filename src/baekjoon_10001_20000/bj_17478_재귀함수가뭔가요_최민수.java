@@ -1,4 +1,4 @@
-package baekjoon;
+package baekjoon_10001_20000;
 
 import java.io.FileInputStream;
 import java.util.Scanner;
