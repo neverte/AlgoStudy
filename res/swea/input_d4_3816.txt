@@ -1,0 +1,11 @@
+4
+aba ababababa
+abra abracadabra
+anan bananaparanabrazil
+ab abba
+
+
+#1 4
+#2 2
+#3 2
+#4 2
