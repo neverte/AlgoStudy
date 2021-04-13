@@ -8,7 +8,7 @@ import java.util.Arrays;
 import java.util.Stack;
 import java.util.StringTokenizer;
 
-//패키지 날려야되나
+//패키지 날리기
 //class Solution으로 바꾸기
 //내부 입력 주석처리하기
 public class Solution_d4_1249_보급로_구미4반_최민수 {
