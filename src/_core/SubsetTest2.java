@@ -23,14 +23,11 @@ public class SubsetTest2 {
 		System.out.println("total: "+totalCnt);
 		
 		sc.close();
-		
 	}
 	
 	//현 원소를 부분집합의 구성에 반영
-	/*
-5 0
--7 -3 -2 5 8
-	*/
+	//5 0
+	//-7 -3 -2 5 8
 	private static void generateSubset(int cnt) {
 		if(cnt == N) {
 			int sum = 0, selectedCnt=0;
@@ -51,7 +48,6 @@ public class SubsetTest2 {
 			}
 			return;
 		}
-		
 		
 		//선택
 		isSelected[cnt] = true;
