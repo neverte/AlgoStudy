@@ -76,40 +76,46 @@ public class bj_17472_다리만들기2_Prim_pq_최민수 {
 		boolean[] visitPrim = new boolean[islandNum];
 		
 		int sum = 0;
-		boolean canBuild = false;
 
 		q.offer(2); //2번 섬을 시작점으로 한다.
 		
 		while(!q.isEmpty()) {
 			int start = q.poll();
-			visitPrim[start] = true; //
+			visitPrim[start] = true;
 			
 			//start -> end
 			for (int i = 0; i < al.size(); i++) {
-				//시작점이 start 인 녀석 중
-				//목적지를 방문하지 않은 간선이라면
+				//1. 시작점이 start 인 녀석 중
+				//2. 목적지를 방문하지 않은 간선이라면
 				if(al.get(i).startNum == start && !visitPrim[al.get(i).endNum]) {
 					//pq에 추가한다
-					pq.add(al.get(i));
+					pq.offer(al.get(i));
 				}
 			}
 			
 			
 			while(!pq.isEmpty()) {
 				Edge edge = pq.poll(); //pq이기 때문에 가장 작은 간선을 찾음.
-				if(!visitPrim[edge.endNum]) { //이미 방문한 간선은 스킵
+				if(!visitPrim[edge.endNum]) { //이미 방문한 섬에 도착하는 간선은 스킵
 					q.offer(edge.endNum);
 					visitPrim[edge.endNum] = true; //방문처리
 					sum += edge.distance;
-					break;
+					break; //간선개수 확인해서 나갈 수 있도록 바꾸기.
+					
+					
+					//86~94 이동.
+					
 				}
+				
+				
+				
 			}
 		}
 		
 //		for(int[] ii: map)System.out.println(Arrays.toString(ii));
 		
 		//visitPrim을 돌면서 하나라도 false이면 해당 섬을 방문하지 않은 것
-		canBuild = true;
+		boolean canBuild = true;
 		for (int i = 2; i < visitPrim.length; i++) {
 			if(!visitPrim[i]) canBuild = false;
 		}
@@ -129,8 +135,6 @@ public class bj_17472_다리만들기2_Prim_pq_최민수 {
 	private static void dfs(int startx, int starty, int[][] map, boolean[][] v, int num) {
 		int n = map.length;
 		int m = map[0].length;
-		
-		
 		
 		for (int i = 0; i < 4; i++) {
 			int cx = startx + dx[i];

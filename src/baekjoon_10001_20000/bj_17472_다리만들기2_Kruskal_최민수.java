@@ -25,7 +25,7 @@ public class bj_17472_다리만들기2_Kruskal_최민수 {
 		
 		//아이디어. MST
 		//0. 섬을 목록으로 만들어야 한다. 섬의 개수는 2~6
-		//섬 판정은 DFS로 한다? 아니면 union find?
+		//섬 판정은 DFS로 한다
 		//1. 먼저 각 섬에서 4방향으로 다리를 다 놔보고, 연결 가능하면 후보에 넣고, 아니면 제거한다
 		//2. 모든 다리 후보군을 구했으면 Kruskal, prim을 돌려본다
 		
@@ -63,7 +63,6 @@ public class bj_17472_다리만들기2_Kruskal_최민수 {
 		//놓을 수 있으면 Edge 객체 만들어서
 		//Edge List에 저장하기
 		
-//		Edge[] edgeList = new Edge[99]; //100*100 섬에서 놓을 수 있는게 몇개인지 모르겠다.
 		PriorityQueue<Edge> pq = new PriorityQueue<Edge>(); //edge를 담을텐데, 길이 순으로 저장함.
 		
 		for (int i = 0; i < n; i++) {
@@ -75,8 +74,8 @@ public class bj_17472_다리만들기2_Kruskal_최민수 {
 		}
 		
 		//2. Kruskal
-		//make
-		//islandNum이 2부터 시작함. 3이면, 2, 3해서 2개
+		//make 
+		//islandNum이 2부터 시작함.
 		int parents[] = new int[islandNum];
 		for (int i = 0; i < islandNum - 1; i++) { 
 			parents[i] = i;
@@ -116,8 +115,6 @@ public class bj_17472_다리만들기2_Kruskal_최민수 {
 		int n = map.length;
 		int m = map[0].length;
 		
-		
-		
 		for (int i = 0; i < 4; i++) {
 			int cx = startx + dx[i];
 			int cy = starty + dy[i];
@@ -154,7 +151,6 @@ public class bj_17472_다리만들기2_Kruskal_최민수 {
 		public int compareTo(Edge o) {
 			return Integer.compare(this.distance, o.distance);
 		}
-		
 	}
 	
 	private static void makeBridge(int startX, int startY, int[][] map, PriorityQueue<Edge> pq) {
@@ -167,18 +163,19 @@ public class bj_17472_다리만들기2_Kruskal_최민수 {
 				int cx = startX + dx[i] * j;
 				int cy = startY + dy[i] * j;
 				
-				//돌다가 배열 밖을 만난다 = 섬을 못만났다 = 다리 개설 불가
+				//1. 돌다가 배열 밖을 만난다 = 섬을 못만났다 = 다리 개설 불가
 				if(cx < 0 || cx >= n || cy < 0 || cy >= m) break;
-				//자기 자신 섬을 만났다.
+				//2. 자기 자신 섬을 만났다.
 				//ㄷ자 형태의 섬이면 자기 자신이면 안된다.
 				if(islandNum == map[cx][cy]) break;
 				
-				//돌다가 섬을 만났다 = 다리 개설 가능
+				//3. 돌다가 섬을 만났다 = 다리 개설 가능
 				int distance = Math.abs(startX - cx) + Math.abs(startY - cy) - 1; //시작점, 끝점이 섬에 포함되어있어서 1 빼줘야 함.
 				
-				//섬 A와 B를 연결하는 다리가 중간에 섬 C와 인접한 바다를 지나가는 경우에 섬 C는 A, B와 연결되어있는 것이 아니다
-				//길이가 1이면 안된다. "2" 0 "4"
+				//4. 섬 A와 B를 연결하는 다리가 중간에 섬 C와 인접한 바다를 지나가는 경우에 섬 C는 A, B와 연결되어있는 것이 아니다
+				//5. 길이가 1이면 안된다. "2" 0 "4"
 				if(map[cx][cy] >= 2 && distance >= 2) {
+					//다리 후보 추가
 					pq.offer(new Edge(startX, startY, islandNum, cx, cy, map[cx][cy], distance));
 					break; //1 0 1 0 0 1를 걸러내기 위함
 				}

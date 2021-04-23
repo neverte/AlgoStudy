@@ -76,7 +76,6 @@ public class bj_17472_다리만들기2_Prim_최민수 {
 		
 //		for(int[] ii:adjMatrix)System.out.println(Arrays.toString(ii));
 
-		
 		//2. Prim
 		int sum = 0;
 		minEdge[2] = 0; //2번섬(시작섬)을 시작정점으로 처리하기 위해 0으로 세팅
@@ -105,8 +104,11 @@ public class bj_17472_다리만들기2_Prim_최민수 {
 			sum += minDistance;
 			visitPrim[minIsland] = true;
 			
-			//기존에 만들었던 최소 간선 비용을 갱긴해야 한다.
+			//기존에 만들었던 최소 간선 비용을 갱신해야 한다.
 			for (int j = 2; j < islandNum; j++) {
+				//1. j섬에 방문한 적이 없고
+				//2. minIsland -> j에 다리 후보가 있으며
+				//3. 기존에 측정한 최소비용보다 더 짧은 다리를 찾았으면 갱신한다.
 				if(!visitPrim[j] && adjMatrix[minIsland][j] != 0 && minEdge[j] > adjMatrix[minIsland][j]) {
 					minEdge[j] = adjMatrix[minIsland][j];
 				}
@@ -130,7 +132,6 @@ public class bj_17472_다리만들기2_Prim_최민수 {
 		int n = map.length;
 		int m = map[0].length;
 		
-
 		for (int i = 0; i < 4; i++) {
 			int cx = startx + dx[i];
 			int cy = starty + dy[i];
