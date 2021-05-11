@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.PriorityQueue;
 
 //[lv 2] 메뉴 리뉴얼
-//https://www.acmicpc.net/problem/72411
+//https://programmers.co.kr/learn/courses/30/lessons/72411
 //제출전에 Main으로 바꾸기, file input 지우기, package 지우기
 public class pro_72411_메뉴리뉴얼_최민수 {
 	public static void main(String[] args) throws Exception {
