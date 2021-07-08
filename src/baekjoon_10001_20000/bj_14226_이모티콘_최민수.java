@@ -37,7 +37,7 @@ public class bj_14226_이모티콘_최민수 {
 
 			if (temp.emotes > 2000 || temp.emotes <= 0)
 				continue;
-			// 값이 갱신된적이 있고,
+			// 값이 갱신된적이 없고,
 			if (dp[temp.emotes] == 0) {
 				dp[temp.emotes] = temp.time;
 			}
