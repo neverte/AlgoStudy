@@ -5,7 +5,6 @@ import java.io.BufferedWriter;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.util.Arrays;
 
 //[골드 3] 고냥이
 //https://www.acmicpc.net/problem/16472
