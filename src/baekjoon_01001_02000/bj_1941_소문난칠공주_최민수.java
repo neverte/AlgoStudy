@@ -5,7 +5,6 @@ import java.io.BufferedWriter;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.util.Arrays;
 
 //[골드 3] 소문난 칠공주
 //https://www.acmicpc.net/problem/1941
