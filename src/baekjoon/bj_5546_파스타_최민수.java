@@ -46,8 +46,8 @@ public class bj_5546_파스타_최민수 {
 	static int[][][] dp;
 	static int n;
 
-	// staright == 0: 연속해서 먹었다.
-	// ==1: 불연속하게 먹었다.
+	// staright == 0: 비연속해서 먹었다.
+	// ==1: 연속하게 먹었다.
 	private static int dynamic(int day, int pasta, int straight) {
 
 		// 이미 이 날에 먹을 것이 정해져 있고, 재귀로 들어온 값이 그 값이 아니면
