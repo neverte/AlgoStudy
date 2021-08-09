@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 //[브론즈 1] 수 정렬하기
 //https://www.acmicpc.net/problem/2750

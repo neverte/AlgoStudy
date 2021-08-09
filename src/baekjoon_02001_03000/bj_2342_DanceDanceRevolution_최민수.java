@@ -5,10 +5,7 @@ import java.io.BufferedWriter;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.util.ArrayDeque;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Queue;
 import java.util.StringTokenizer;
 
 //[골드 3] Dance Dance Revolution

@@ -1,7 +1,6 @@
 package baekjoon_02001_03000;
 
 import java.io.FileInputStream;
-import java.util.Arrays;
 import java.util.Scanner;
 
 //[실버 3] 풍선 터뜨리기
@@ -23,15 +22,16 @@ public class bj_2346_최민수 {
 		}
 
 		// 풍선N개 터뜨리기
-		//다음 풍선 수
+		// 다음 풍선 수
 		int balls = balloon.length - 1;
 		int pos_now = 0;
 		// 몇칸 움직일껀지
 		int pos_mov = 0;
 		while (balls > 0) {
 			System.out.println(pos_now + 1);
-			
-			if(N == 1) break;
+
+			if (N == 1)
+				break;
 			// pow_now는 터졌다.
 			balloon[pos_now][1] = 1;
 
@@ -43,7 +43,8 @@ public class bj_2346_최민수 {
 					if (balloon[pos_now][1] == 0) {
 						// 이동횟수를 1 빼고
 						pos_mov--;
-						if (pos_mov == 0) break;
+						if (pos_mov == 0)
+							break;
 					}
 					// 현재 위치가 배열 범위 밖으로 가는지 확인한 다음
 					if (pos_now + 1 > balls) {

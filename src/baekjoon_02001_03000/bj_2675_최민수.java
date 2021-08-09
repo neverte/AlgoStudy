@@ -1,7 +1,5 @@
 package baekjoon_02001_03000;
 
-import java.io.FileInputStream;
-import java.util.Arrays;
 import java.util.Scanner;
 
 //[브론즈2] 문자열 반복
