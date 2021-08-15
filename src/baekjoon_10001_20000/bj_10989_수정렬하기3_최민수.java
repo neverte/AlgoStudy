@@ -5,8 +5,6 @@ import java.io.BufferedWriter;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.util.ArrayList;
-import java.util.Collections;
 
 //[실버5] 수 정렬하기 3
 //https://www.acmicpc.net/problem/10989
@@ -25,7 +23,6 @@ public class bj_10989_수정렬하기3_최민수 {
 			number[Integer.parseInt(br.readLine())]++;
 		}
 
-		StringBuilder sb = new StringBuilder();
 		for (int i = 0; i < 10001; i++) {
 			for (int j = 0; j < number[i]; j++) {
 				bw.write(i + "\n");
