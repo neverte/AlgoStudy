@@ -2,7 +2,6 @@ package jungol;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
@@ -12,10 +11,10 @@ import java.io.InputStreamReader;
 public class jo_문제이름_0000 {
 
 	public static void main(String[] args) throws IOException {
-		//테스트 입력
+		// 테스트 입력
 		System.setIn(new FileInputStream("res/jungol/jo_input_@@@@@@@@@@@@@@@@@@@@@@@"));
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-	
+
 		br.close();
 
 	}

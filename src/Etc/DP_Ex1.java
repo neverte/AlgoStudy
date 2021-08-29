@@ -1,9 +1,5 @@
 package Etc;
 
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.InputStreamReader;
-
 //0323 Workshop 1번
 public class DP_Ex1 {
 	public static void main(String[] args) throws Exception {

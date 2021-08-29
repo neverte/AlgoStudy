@@ -2,7 +2,6 @@ package jungol;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
@@ -13,11 +12,11 @@ import java.util.StringTokenizer;
 public class jo_오류교정_1037 {
 
 	public static void main(String[] args) throws IOException {
-		//테스트 입력
+		// 테스트 입력
 		System.setIn(new FileInputStream("res/jungol/jo_input_1037"));
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-	
-		//행렬의 크기 N ~99
+
+		// 행렬의 크기 N ~99
 		int N = Integer.parseInt(br.readLine());
 		int rowCount, rowParitCheck = 0, colParitCheck = 0;
 		boolean isCorrupt = false;
@@ -28,12 +27,15 @@ public class jo_오류교정_1037 {
 			rowCount = 0;
 			for (int j = 0; j < map.length; j++) {
 				map[i][j] = Integer.parseInt(st.nextToken());
-				if(map[i][j] == 1) rowCount++;
+				if (map[i][j] == 1)
+					rowCount++;
 			}
-			if(rowCount % 2 == 1) rowParitCheck++;
-			if(!isCorrupt && rowParitCheck==1 && checkPointX == -1) checkPointX = i;
-			//무조건 Corrupt
-			if(rowParitCheck >= 2) {
+			if (rowCount % 2 == 1)
+				rowParitCheck++;
+			if (!isCorrupt && rowParitCheck == 1 && checkPointX == -1)
+				checkPointX = i;
+			// 무조건 Corrupt
+			if (rowParitCheck >= 2) {
 				isCorrupt = true;
 				break Loop1;
 			}
@@ -42,29 +44,33 @@ public class jo_오류교정_1037 {
 		Loop2: for (int i = 0; i < N; i++) {
 			colCount = 0;
 			for (int j = 0; j < N; j++) {
-				if(map[j][i] == 1) colCount++;
+				if (map[j][i] == 1)
+					colCount++;
 			}
-			if(colCount % 2 == 1)colParitCheck++;
-			if(colParitCheck >= 2) {
+			if (colCount % 2 == 1)
+				colParitCheck++;
+			if (colParitCheck >= 2) {
 				isCorrupt = true;
 				break Loop2;
 			}
-			if(!isCorrupt && rowParitCheck==1 && colParitCheck == 1 && checkPointY == -1) checkPointY = i;
-			if(isCorrupt || colParitCheck >= 2) {
+			if (!isCorrupt && rowParitCheck == 1 && colParitCheck == 1 && checkPointY == -1)
+				checkPointY = i;
+			if (isCorrupt || colParitCheck >= 2) {
 				isCorrupt = true;
 				break Loop2;
 			}
 		}
-		if(!isCorrupt) {
-			if(rowParitCheck + colParitCheck == 0) System.out.println("OK");
+		if (!isCorrupt) {
+			if (rowParitCheck + colParitCheck == 0)
+				System.out.println("OK");
 			else {
-				System.out.println("Change bit ("+(checkPointX + 1)+","+(checkPointY+1)+")");
+				System.out.println("Change bit (" + (checkPointX + 1) + "," + (checkPointY + 1) + ")");
 
 			}
-		}else {
+		} else {
 			System.out.println("Corrupt");
 		}
-		
+
 		br.close();
 
 	}
