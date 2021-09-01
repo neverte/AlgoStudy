@@ -11,21 +11,22 @@ public class Solution_d1_2072_홀수만더하기_구미4반_최민수 {
 		int T = line.nextInt();
 	
 		int sum = 0;
-		for(int i=0; i<T; i++) {
+		for (int i = 0; i < T; i++) {
 			int array[] = new int[10];
-			for(int k = 0; k < array.length; k++) {
+			for (int k = 0; k < array.length; k++) {
 				array[k] = line.nextInt();
 			}
-			for(int j : array) {
-				if(j%2 ==1) {
+			for (int j : array) {
+				if (j % 2 == 1) {
 					sum += j;
 				}
 			}
-			System.out.println("#" + i+1 + " " + sum);
+			System.out.println("#" + i + 1 + " " + sum);
 			sum = 0;
 
 		}
 
+		line.close();
 	}
 
 }

@@ -2,10 +2,8 @@ package jungol;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 import java.util.StringTokenizer;
 
 //회전초밥(고)
@@ -30,7 +28,6 @@ public class jo_회전초밥고_2577 {
 		//연속해서 먹는 접시의 수 k: 2~3천
 		//쿠폰번호 c 1~d
 		int n = Integer.parseInt(st.nextToken());
-		int d = Integer.parseInt(st.nextToken()); //1~d번까지
 		int k = Integer.parseInt(st.nextToken());
 		int c = Integer.parseInt(st.nextToken()) - 1; //초밥번호가 0~ d-1로 계산할꺼임
 		

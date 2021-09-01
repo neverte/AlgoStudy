@@ -1,11 +1,8 @@
 package swea_d1_d3;
 
-import java.awt.geom.Area;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
-import java.util.ArrayDeque;
-import java.util.Arrays;
 import java.util.StringTokenizer;
 
 // 패키지 날려야되나
@@ -23,7 +20,6 @@ public class Solution_d3_5215_햄버거다이어트_구미4반_최민수_개선 
 			//재료의 수 N(1~20), 제한 칼로리 L(1~1만)
 			StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 			int N = Integer.parseInt(st.nextToken());
-			int L = Integer.parseInt(st.nextToken());
 			
 			//재료에 대한 재료번호, 맛, 칼로리
 			int[][] al = new int[N][2];

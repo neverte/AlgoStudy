@@ -4,13 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
 import java.util.StringTokenizer;
-
-import javax.swing.text.html.HTMLDocument.HTMLReader.IsindexAction;
 
 // 패키지 날리기
 // class Solution으로 바꾸기

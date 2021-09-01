@@ -4,10 +4,6 @@ import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayDeque;
-import java.util.Arrays;
-import java.util.PriorityQueue;
-import java.util.Scanner;
-import java.util.StringTokenizer;
 
 // 패키지 날리기
 // class Solution으로 바꾸기

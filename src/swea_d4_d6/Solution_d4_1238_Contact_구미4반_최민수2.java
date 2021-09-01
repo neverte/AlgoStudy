@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayDeque;
-import java.util.Arrays;
 import java.util.StringTokenizer;
 
 // 패키지 날리기
@@ -22,7 +21,6 @@ public class Solution_d4_1238_Contact_구미4반_최민수2 {
 			
 			//아이디어 그래프 BFS로 마지막 단계 사람들 구하기
 			StringTokenizer st = new StringTokenizer(br.readLine(), " ");
-			int length = Integer.parseInt(st.nextToken());
 			int start = Integer.parseInt(st.nextToken())-1;//1~100을 0~99
 			//다음과 같이 동일한 {from, to}쌍이 여러 번 반복되는 경우도 있으며
 			int[][] adjArr = new int[100][100];

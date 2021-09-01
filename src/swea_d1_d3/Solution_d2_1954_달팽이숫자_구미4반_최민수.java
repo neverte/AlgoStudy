@@ -1,9 +1,7 @@
 package swea_d1_d3;
 
 import java.io.BufferedReader;
-import java.io.FileInputStream;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 
 // 패키지 날려야되나
 // class Solution으로 바꾸기
