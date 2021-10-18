@@ -1,0 +1,37 @@
+4
+Baba is Rabbit
+Rabbit is Cat
+Cat is Wall
+Wall is Unist
+
+answer
+Cat
+Rabbit
+Unist
+Wall
+
+
+
+1
+Rabbit is Carrot
+
+answer
+
+
+3
+Rabbit is Carrot
+Baba is Cat
+Cat is Rabbit
+
+answer
+Carrot
+Cat
+Rabbit
+
+
+1
+Baba is Rabbit
+
+answer
+Rabbit
+
