@@ -21,8 +21,7 @@ public class bj_9465_스티커_최민수 {
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
 		T = Integer.parseInt(br.readLine());
-		
-		
+
 		for (int tc = 0; tc < T; tc++) {
 			n = Integer.parseInt(br.readLine());
 			value = new int[2][n];
@@ -45,14 +44,14 @@ public class bj_9465_스티커_최민수 {
 				dp[i][2] = Math.max(Math.max(dp[i - 1][1], dp[i - 1][2]), dp[i - 1][0]);
 			}
 
-			bw.write(Math.max(Math.max(dp[n-1][1], dp[n - 1][2]), dp[n - 1][0])+"\n");
-			
+			bw.write(Math.max(Math.max(dp[n - 1][1], dp[n - 1][2]), dp[n - 1][0]) + "\n");
 
 		}
-
 
 		bw.flush();
 		bw.close();
 		br.close();
 	}
+	
+	
 }
