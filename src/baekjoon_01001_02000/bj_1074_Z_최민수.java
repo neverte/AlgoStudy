@@ -8,7 +8,7 @@ import java.util.StringTokenizer;
 //[실버 1] Z
 //https://www.acmicpc.net/problem/1074
 //제출전에 Main으로 바꾸기, file input 지우기, package 지우기
-public class bj_1074_최민수 {
+public class bj_1074_Z_최민수 {
 	static int r, c;
 	public static void main(String[] args) throws Exception {
 		//테스트 입력
